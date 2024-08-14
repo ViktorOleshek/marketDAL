@@ -10,6 +10,7 @@ namespace Data.Entities
     [Table("Person")]
     public class Person : BaseEntity
     {
+        public Person() : base() { }
         public Person(int id) : base(id) { }
 
         public string Name { get; set; }

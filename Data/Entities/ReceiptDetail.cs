@@ -10,6 +10,7 @@ namespace Data.Entities
     [Table("ReceiptDetail")]
     public class ReceiptDetail : BaseEntity
     {
+        public ReceiptDetail() : base() { }
         public ReceiptDetail(int id) : base(id) { }
 
         public int ReceiptId { get; set; }
@@ -18,7 +19,7 @@ namespace Data.Entities
         public decimal UnitPrice { get; set; }
         public int Quantity { get; set; }
 
-        public Receipt Receipt { get; set; }
-        public Product Product { get; set; }
+        public virtual Receipt Receipt { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

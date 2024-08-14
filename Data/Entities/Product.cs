@@ -11,6 +11,7 @@ namespace Data.Entities
     [Table("Product")]
     public class Product : BaseEntity
     {
+        public Product() : base() { }
         public Product(int id) : base(id) { }
 
         [Column("ProductCategoryId")]
@@ -23,7 +24,7 @@ namespace Data.Entities
         [Column("Price")]
         public decimal Price { get; set; }
 
-        public ProductCategory Category { get; set; }
-        public ICollection<ReceiptDetail> ReceiptDetails { get; set; }
+        public virtual ProductCategory Category { get; set; }
+        public virtual ICollection<ReceiptDetail> ReceiptDetails { get; init; } = [];
     }
 }

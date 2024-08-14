@@ -10,11 +10,12 @@ namespace Data.Entities
     [Table("ProductCategory")]
     public class ProductCategory : BaseEntity
     {
+        public ProductCategory() : base() { }
         public ProductCategory(int id) : base(id) { }
 
         [Column("CaregoryName")]
-        public string CategoryName { get; set; }
+        public virtual string CategoryName { get; set; }
 
-        public ICollection<Product> Products { get; set; }
+        public virtual ICollection<Product> Products { get; init; } = [];
     }
 }

@@ -39,9 +39,6 @@ namespace Data.Data
 
             modelBuilder.Entity<Person>(e =>
             {
-                e.Property(p => p.Name).IsRequired();
-                e.Property(p => p.Surname).IsRequired();
-                e.Property(p => p.BirthDate).IsRequired();
             });
 
             modelBuilder.Entity<Product>(e =>
@@ -54,13 +51,11 @@ namespace Data.Data
                  .WithOne(rd => rd.Product)
                  .HasForeignKey(rd => rd.ProductId);
 
-                e.Property(p => p.ProductName).IsRequired();
                 e.Property(p => p.Price).HasColumnType("decimal(18,2)");
             });
 
             modelBuilder.Entity<ProductCategory>(e =>
             {
-                e.Property(pc => pc.CategoryName).IsRequired();
             });
 
             modelBuilder.Entity<Receipt>(e =>
@@ -72,8 +67,6 @@ namespace Data.Data
                 e.HasMany(r => r.ReceiptDetails)
                  .WithOne(rd => rd.Receipt)
                  .HasForeignKey(rd => rd.ReceiptId);
-
-                e.Property(r => r.OperationDate).IsRequired();
             });
 
             modelBuilder.Entity<ReceiptDetail>(e =>

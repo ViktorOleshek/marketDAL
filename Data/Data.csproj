@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <EnableNETAnalyzers>true</EnableNETAnalyzers>
     <AnalysisMode>AllEnabledByDefault</AnalysisMode>
     <CodeAnalysisTreatWarningsAsErrors>false</CodeAnalysisTreatWarningsAsErrors>
@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+	  <PackageReference Include="AutoMapper" Version="13.0.1" />
 	  <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0" />
 	  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0" />
 	  <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0" />
@@ -19,12 +20,6 @@
   <ItemGroup>
     <AdditionalFiles Include="..\code-analysis.ruleset" Link="Properties\code-analysis.ruleset" />
     <AdditionalFiles Include="..\stylecop.json" Link="Properties\stylecop.json" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Entities\" />
-    <Folder Include="Migrations\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
 
 

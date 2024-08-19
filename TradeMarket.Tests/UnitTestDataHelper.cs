@@ -3,7 +3,6 @@ using Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using AutoMapper;
-using Business;
 
 namespace TradeMarket.Tests
 {

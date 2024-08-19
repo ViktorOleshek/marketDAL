@@ -7,8 +7,13 @@ using System.Threading.Tasks;
 
 namespace Data.Repositories
 {
-    public abstract class AbstractRepository(TradeMarketDbContext context)
+    public abstract class AbstractRepository
     {
-        protected TradeMarketDbContext Context { get; } = context;
+        protected TradeMarketDbContext Context { get; }
+
+        protected AbstractRepository(TradeMarketDbContext context)
+        {
+            this.Context = context;
+        }
     }
 }
